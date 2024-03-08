@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+::-webkit-scrollbar { width: 9px; height: 9px;}
+::-webkit-scrollbar-button { width: 0px; height: 0px;}
+::-webkit-scrollbar-thumb { background: transparent; border: 0px none #fff; border-radius: 10px;}
+::-webkit-scrollbar-thumb:hover { background: #3d6077;}
+::-webkit-scrollbar-thumb:active { background: #8dd0d8;}
+::-webkit-scrollbar-track {background: transparent;border: 0px solid #aaa; border-radius: 5px;}
+::-webkit-scrollbar-track:hover { background: #e4e4e4;}
+::-webkit-scrollbar-track:active { background: #d2d2d2;}
+::-webkit-scrollbar-corner { background: transparent;}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Pangolin', cursive;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+
+
+/* EMPIEZA EL HEADER O BARRA DE MENÚ */
+
+nav{
+    background-color: #000000;
+    background-size: cover;
+    background-position: center center;
+    height: 130px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    border-bottom: 2px solid #8a1cb6;
+}
+.enlace-logo{
+    position: absolute;
+    padding: 5px 40px;
+}
+.enlace-logo img{
+    width: 150px;
+    height: 120px;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 130px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: rgb(240, 224, 224);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+li a:hover{
+    color: #c83eff;
+    transition: 0.6s;
+    font-size: 22px;
+}
+.checkbtn{
+    color: rgb(240, 224, 224);
+    font-size: 30px;
+    cursor:pointer;
+    float: right;
+    line-height: 130px;
+    margin-right: 40px;
+    display: none;
+}
+.checkbtn:hover{
+    color: #c83eff;
+    transition: 0.6s;
+}
+#check{
+    display: none;
+}
+section{
+    background-image: url(https://cdn.pixabay.com/photo/2022/01/30/17/16/snowman-6981771_960_720.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: calc(100vh);
+}
+@media (max-width: 730px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-image: url(https://i.pinimg.com/originals/62/02/b9/6202b931f3d654284e53d6a3e8616a4a.jpg);
+        background-position: center center;
+        background-size: cover;
+        top: 130px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        left: -100%;
+        transition: all 0.9s;
+        z-index: 7;
+    }
+    nav ul li{
+        display: block;
+        margin: 30px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    li a:hover{
+        color: aliceblue;
+        transition: 0.6s;
+        font-size: 23px;
+    }
+    #check:checked ~ ul{
+        left:0; 
+    }
+}
+
+/* FIN DE LA BARRA DE MENÚ */
+/* COMIENZO DE LA SECCION DE BIENVENIDA */
+
+
+.bienvenida{
+    color: aliceblue;
+    padding-top: 130px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100vh;   
+    width: 100%;
+    background-image: url(https://i.pinimg.com/originals/62/02/b9/6202b931f3d654284e53d6a3e8616a4a.jpg);
+    background-position: center center;
+    background-size: cover;
+    align-items: center;
+}
+.bienvenida h1{
+    font-size: 5rem;
+    text-align: center;
+    margin: 0 20px;
+    font-style: italic;
+}
+@media(max-width: 440px){
+    .bienvenida h1{
+        font-size: 3rem;
+    }
+}
+
+/*
+@media(max-width: 425px){
+    .bienvenida{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 270px;
+    }
+    .img-descarga img{
+        width: 100px;
+    }
+    .cuadro{
+        margin: 10px 20px;
+    }
+    .imagen img{
+        margin: 5px 6px;
+        display: none;
+    }
+    .contenedor-tarjetas{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 140px;
+    }
+}
+*/
+
+
+/*FINAL DE LA SECCION DE BIENVENIDA Y COMIENZO DE 4 TARJETAS*/
+
+.contenedor-tarjetas{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+.contenedor-tarjetas img{
+    max-width: 290px;
+    height: 210px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.contenedor-tarjetas img:hover{
+    transform:scale(0.9);
+    transition: 0.5s;
+    opacity: 65%;
+}
+@media (max-width:425px){
+    .contenedor-tarjetas{
+        align-items: center;
+        margin-top: 140px;
+    }
+}
+
+/*
+AQUI TERMINA LA SECCION DE TARJETAS DE CATEGORIAS
+Y EMPIEZA LA SECCION DE NOSOTROS
+*/
+
+.nosotros{
+    color: aliceblue;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+}
+.nosotros h3{
+    font-size: 1.7rem;
+    padding: 20px 0px;
+    color: #c83eff;
+}
+.nosotros h1{
+    font-size: 3.5rem;
+    padding: 0 0 20px 0;
+    margin: 0 10px;
+}
+.nosotros p{
+    font-size: 1.11rem;
+    padding: 0 20px;
+}
+.nosotros a{
+    text-decoration: none;
+    color: aliceblue;
+    padding: 20px 25px;
+    background-color: #742096;
+    border-radius: 30px;
+    font-size: 18px;
+}
+.nosotros a:hover{
+    background-color: #a33ccc;
+}
+.nuestros-juegos{
+    margin-top: 100px;
+    padding-top: 50px;
+    width: 100%;
+    background-image: linear-gradient(to right, 
+    #c555f1,
+    #a33ccc,
+    #8c2cb3,
+    #742096,
+    #681988,
+    #580f75,
+    #480a61,
+    #2f0341
+    );
+}
+
+/*AQUI TERMINA LA SECCION DE NOSOTROS
+Y EMPIEZA LA DE LAS TARJETAS DE NUEVOS JUEGOS*/
+
+.seccion-juegos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: linear-gradient(to right, 
+    #c555f1,
+    #a33ccc,
+    #8c2cb3,
+    #742096,
+    #681988,
+    #580f75,
+    #480a61,
+    #2f0341
+    );
+}
+.juego{
+    width: 320px;
+    height: 370px;
+    margin: 30px;
+    border-radius: 30px;
+    background-color: aliceblue;
+    display: flex;
+    color: rgb(0, 0, 0);
+    justify-content: start; 
+    flex-wrap: wrap;
+    border: 3px solid #000;
+    box-shadow: 1px 1px 20px 10px;
+}
+.juego img{
+    width: 120px;
+    height: 79px;
+    border-radius: 20px;
+    margin: 30px;
+    
+}
+.juego h4{
+    margin: 55px 0px;
+    font-size: 1.3rem;
+    letter-spacing: 0.7px;
+}
+.juego p{
+    text-align: center;
+    margin: 0px 20px;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+.descargar{
+    display: flex;
+    justify-content:space-around;    
+}
+.descargar img{
+    width: 99px;
+    height: 45px;
+}
+
+/*AQUI TERMINA LA SECCION DE TARJETAS DE JUEGOS
+Y COMIENZA LA SECCION DE EXPERIENCIA (PREVIA AL FOOTER)... */
+
+.experiencia{
+    text-align: center;
+    display: flex;
+    color: aliceblue;
+    flex-direction: column;
+    padding: 25px;
+    align-items: center;
+    background-image: url(https://cdn.pixabay.com/photo/2016/09/08/12/00/stars-1654074_960_720.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+.basty h3{
+    background-color: #8c2cb3;
+    font-size: 2rem;
+    padding: 10px 30px;
+    border-radius: 30px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+.previo-footer{
+    font-size: 1.1rem;
+}
+
+/*AQUI TERMINA LA SECCION DE EXPERIENCIA
+Y EMPIEZA EL FOOTER*/
+
+footer{
+    color: aliceblue;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: start;
+    padding: 20px 10px;
+    flex-wrap: wrap;
+    bottom: 0;
+    background-color: #000  ;
+}
+.sec-footer{
+    min-width: 230px;
+    margin: 10px;
+}
+.sec-footer h3{
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+.sec-footer p{
+    font-size: 1rem;
+}
+.sec-footer a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.sec-footer a:hover{
+    color: #d170f8;
+    transition: 0.7s;
+    padding-left: 10px;
+}
+.footer-encuentranos img{
+    width: 150px;
+    border: 1px solid aliceblue;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.footer-encuentranos{
+    display: flex;
+    flex-direction: column;
+}
+/*SECCION DE COPYRIGHT Y DERECHOS DE AUTOR*/
+.copyright{
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.copyright p{
+    padding: 10px;
+
+}
